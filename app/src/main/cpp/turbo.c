@@ -35,7 +35,7 @@ int generateJpg(BYTE *data, int width, int height, int quality, const char *outf
 
     jcs.image_width = (JDIMENSION) width;
     jcs.image_height = (JDIMENSION) height;
-    jcs.arith_code = false;
+    jcs.arith_code = FALSE;
     jcs.input_components = component;
     jcs.in_color_space = JCS_RGB;
     jcs.optimize_coding = TRUE;
@@ -60,8 +60,9 @@ int generateJpg(BYTE *data, int width, int height, int quality, const char *outf
 }
 
 JNIEXPORT jboolean JNICALL
-Java_top_zibin_luban_turbo_TurboCompressor_nativeCompress(JNIEnv *env, jobject bitmap,
-                                                          jstring outfile, jint quality) {
+Java_top_zibin_luban_turbo_TurboCompressor_nativeCompress(JNIEnv *env, jclass type,
+                                                          jobject bitmap, jint quality,
+                                                          jstring outfile) {
     AndroidBitmapInfo bitmapInfo;
     BYTE *pixelColor;
     BYTE *data;
@@ -116,6 +117,6 @@ Java_top_zibin_luban_turbo_TurboCompressor_nativeCompress(JNIEnv *env, jobject b
     if (result == 0) {
         return false;
     } else {
-        return true;
+    return true;
     }
 }
