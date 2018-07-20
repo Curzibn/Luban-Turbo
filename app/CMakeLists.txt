@@ -10,7 +10,7 @@ add_library(
 
 include_directories(src/main/cpp/include)
 
-add_library(jpeg SHARED IMPORTED )
+add_library(jpeg STATIC IMPORTED )
 
 set_target_properties(  jpeg
                         PROPERTIES IMPORTED_LOCATION
