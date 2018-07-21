@@ -3,8 +3,7 @@
 #include <android/log.h>
 #include <android/bitmap.h>
 #include <malloc.h>
-
-#include "jpeglib.h"
+#include "include/jpeglib.h"
 
 #define LOG_TAG "Luban"
 
@@ -117,6 +116,6 @@ Java_top_zibin_luban_turbo_TurboCompressor_nativeCompress(JNIEnv *env, jclass ty
     if (result == 0) {
         return false;
     } else {
-    return true;
+        return true;
     }
 }
